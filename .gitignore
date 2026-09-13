@@ -1,0 +1,26 @@
+# Track computational materials only.
+/*
+!/.gitignore
+!/README.md
+!/requirements.txt
+!/reproduce.ps1
+!/run_covariance_experiment.ps1
+!/run_extra_experiments.ps1
+!/code/
+!/artifacts/
+!/results/
+!/figures/
+!/tables/
+
+# Python caches and local environments
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.venv/
+venv/
+
+# Editor and operating-system files
+.idea/
+.vscode/
+.DS_Store
+Thumbs.db

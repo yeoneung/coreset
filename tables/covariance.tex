@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Gaussian-source ablation at $t_s=123$ and NFE $5$ (mean $\pm$ standard deviation over three sampling seeds).  Source NLL is held-out excess Gaussian cross-entropy per trajectory coordinate relative to the full pooled covariance.  The WSD-style source predicts a conditional mean and diagonal variance; the other learned moments are pooled.  Reverse metrics use the same pretrained VP score model.  $\Delta J$ is the dimensionless median normalized gap $(J-J^*)/\overline{J^*}$ over feasible samples.  It uses the multistart-oracle reference in \texttt{artifacts/data/test\_ref.pt}, distinct from the post hoc reference in Table~\ref{tab:main}; gap magnitudes are not directly comparable across these studies.}
+\label{tab:covariance}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lccccc}
+\toprule
+Source & excess NLL/dim & Feas. (\%) & $\Delta J$ & Recall-MM (\%) & Diversity \\
+\midrule
+VP isotropic & 0.036 & 59.0 $\pm$ 0.3 & 1.35 $\pm$ 0.02 & 74.4 $\pm$ 1.3 & 2.02 $\pm$ 0.01 \\
+pooled diagonal & 0.032 & 59.6 $\pm$ 0.4 & 2.12 $\pm$ 0.00 & 76.7 $\pm$ 2.5 & 2.19 $\pm$ 0.01 \\
+WSD-style cond. diagonal & 0.029 & 71.4 $\pm$ 0.0 & 2.04 $\pm$ 0.02 & 70.4 $\pm$ 0.7 & 2.05 $\pm$ 0.01 \\
+rank-4 & 0.000 & 72.6 $\pm$ 0.6 & 2.60 $\pm$ 0.04 & 97.2 $\pm$ 0.5 & 4.63 $\pm$ 0.03 \\
+full & 0.000 & 72.9 $\pm$ 0.3 & 2.56 $\pm$ 0.02 & 97.6 $\pm$ 1.1 & 4.63 $\pm$ 0.03 \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

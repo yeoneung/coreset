@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Full-budget sampling (DDIM, NFE $129$, $16$ samples per task, mean $\pm$ standard deviation over $3$ training seeds and $2$ sampling seeds).  The reported median gap is the normalized quantity $(J-J^*)/\overline{J^*}$ over feasible outputs, with a common mean best-known reference denominator; it is dimensionless, while feasibility and mode recall are percentages.  Unmarked and ``+polish'' columns evaluate raw and identically polished outputs, respectively.  The teacher row is evaluated against the stronger post hoc reference, not its data-generation filter.  The three equally conditioned coordinate parameterizations agree within seed variation, whereas BASE-RAW omits the nominal input.  This reference differs from the covariance-ablation reference.}
+\label{tab:main}
+\resizebox{\textwidth}{!}{%
+\begin{tabular}{lcccccc}
+\toprule
+Variant & Feas.\ (\%) & $\Delta J$ & $\Delta J$ +polish & Recall (\%) & Recall-MM (\%) & Diversity \\
+\midrule
+oracle data (teacher) & $100.0$ & $6.7$ & --- & $100.0$ & $100.0$ & --- \\ \midrule
+\textsc{base-raw} & $82.9\pm1.5$ & $18.3\pm0.4$ & $9.3\pm0.1$ & $96.4\pm0.6$ & $93.7\pm0.8$ & $4.5\pm0.0$ \\
+\textsc{base-nom} & $86.0\pm0.8$ & $17.4\pm0.4$ & $9.2\pm0.1$ & $97.0\pm0.4$ & $94.5\pm1.2$ & $4.5\pm0.0$ \\
+\textsc{nab} & $86.8\pm0.6$ & $17.0\pm0.2$ & $9.3\pm0.1$ & $97.2\pm0.3$ & $94.3\pm0.6$ & $4.5\pm0.0$ \\
+\textsc{st-ddpm} & $86.1\pm0.7$ & $17.1\pm0.4$ & $9.1\pm0.1$ & $97.1\pm0.3$ & $94.3\pm0.5$ & $4.4\pm0.0$ \\
+\bottomrule
+\end{tabular}
+}
+\end{table}

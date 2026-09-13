@@ -1,0 +1,20 @@
+\begin{table}[t]
+\centering
+\caption{Shrinking-horizon control with $5$ score-network evaluations per replan ($8$ global steps executed per replan, position and velocity disturbances, $117$ episodes; goal error $0.006$ for all methods).  Closed-loop collision rate, commanded per-segment energy relative to the open-loop oracle (median), wall-clock per replan for the whole $117$-episode batch on one GPU, and the measured per-point deviation $\hat\sigma$ of accepted plans from the anchor.  The warm optimizer uses eight starts, including two fresh nominal perturbations.  Collision rates are descriptive.}
+\label{tab:mpc}
+\begin{tabular}{lcccc}
+\toprule
+Replanner & Coll.\ (\%) & Energy ratio & ms/replan & $\hat\sigma$ (per pt) \\
+\midrule
+optimizer, cold start (8-start, 300 it.) & 33.3 & 566.40 & 281 & --- \\
+optimizer, warm start (prev.\ solution) & 27.4 & 2.78 & 275 & 0.042 \\
+full-range stride & 19.7 & 1715.96 & 173 & --- \\
+nominal anchor, $t_s=228$ & 3.4 & 259.94 & 145 & 0.179 \\
+prev.\ solution, $t_s=16$ & 6.8 & 64.28 & 144 & 0.030 \\
+prev.\ solution, $t_s=32$ & 6.8 & 103.17 & 146 & 0.049 \\
+prev.\ solution, $t_s=64$ & 5.1 & 183.85 & 145 & 0.081 \\
+prev.\ solution, $t_s=128$ & 6.8 & 265.51 & 146 & 0.133 \\
+prev.\ solution, $t_s=228$ & 4.3 & 270.06 & 149 & 0.183 \\
+\bottomrule
+\end{tabular}
+\end{table}
